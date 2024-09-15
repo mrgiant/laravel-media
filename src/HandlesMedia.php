@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace Mrgiant\LaravelMedia;
 
 use Illuminate\Support\Facades\Storage;
 

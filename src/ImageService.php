@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services;
+namespace Mrgiant\LaravelMedia;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
