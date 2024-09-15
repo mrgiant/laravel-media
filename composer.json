@@ -1,0 +1,66 @@
+{
+    "name": "mrgiant/laravel-media",
+    "description": "A collection of custom notification providers, offering seamless integration with various channels to enhance your application's messaging capabilities.",
+    "type": "library",
+    "license": "MIT",
+
+    "keywords": [
+        "media",
+        "laravel-media",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Mohamed Al Wahaibi",
+            "email": "mohamed.alwahaibi@golden-logic.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/mrgiant/laravel-media",
+
+   
+
+    "require": {
+        "php": "^8.1",
+         "ext-exif": "*",
+         "ext-fileinfo": "*",
+         "ext-json": "*",
+         "intervention/image": "^3.8"
+        
+        
+
+        
+    },
+
+    "require-dev": {
+
+        "ext-imagick": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-zip": "*",
+        "guzzlehttp/guzzle": "^7.8.1"
+        
+       
+    },
+
+
+
+
+
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+
+    "autoload": {
+        "psr-4": {
+            "Mrgiant\\LaravelMedia\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mrgiant\\LaravelMedia\\LaravelMediaServiceProvider"
+            ]
+        }
+    }
+   
+
+}
