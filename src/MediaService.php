@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services;
+namespace Mrgiant\LaravelMedia;
 
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
