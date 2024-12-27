@@ -38,8 +38,46 @@ class ImageService
 
     }
 
+
+    
+
+    public function resizeDown($width, $height)
+    {
+        if(empty($width))
+        {
+
+            return $this->image->resizeDown(height: $height);
+
+        }
+
+
+        if(empty($height))
+        {
+
+            return $this->image->resizeDown(width: $height);
+
+        }
+
+        return $this->image->resizeDown($width, $height);
+    }
+
     public function resize($width, $height)
     {
+
+        if(empty($width))
+        {
+
+            return $this->image->resize(height: $height);
+
+        }
+
+
+        if(empty($height))
+        {
+
+            return $this->image->resize(width: $height);
+
+        }
 
         return $this->image->resize($width, $height);
     }

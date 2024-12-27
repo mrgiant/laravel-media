@@ -336,10 +336,19 @@ class MediaService
 
             $conversionName = $conversionName;
 
+            $conversion['width']  = !empty($conversion['width'])  ? $conversion['width']  : null;
+            $conversion['height'] = !empty($conversion['height']) ? $conversion['height'] : null;
+
+
             switch ($type) {
                 case 'resize':
                     $imageService->resize($conversion['width'], $conversion['height']);
 
+                    break;
+
+                case 'resizeDown':
+                    $imageService->resizeDown($conversion['width'], $conversion['height']);
+    
                     break;
 
                 case 'crop':
