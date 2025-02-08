@@ -54,7 +54,7 @@ class ImageService
         if(empty($height))
         {
 
-            return $this->image->resizeDown(width: $height);
+            return $this->image->resizeDown(width: $width);
 
         }
 
@@ -75,12 +75,63 @@ class ImageService
         if(empty($height))
         {
 
-            return $this->image->resize(width: $height);
+            return $this->image->resize(width: $width);
 
         }
 
         return $this->image->resize($width, $height);
     }
+
+
+
+    public function scale($width, $height)
+    {
+        if(empty($width))
+        {
+
+            return $this->image->scale(height: $height);
+
+        }
+
+
+        if(empty($height))
+        {
+
+            return $this->image->scale(width: $width);
+
+        }
+
+        return $this->image->scale($width, $height);
+    }
+
+
+
+
+    public function scaleDown($width, $height)
+    {
+        if(empty($width))
+        {
+
+            return $this->image->scaleDown(height: $height);
+
+        }
+
+
+        if(empty($height))
+        {
+
+            return $this->image->scaleDown(width: $width);
+
+        }
+
+        return $this->image->scaleDown($width, $height);
+    }
+
+
+
+
+
+
 
     public function crop($width, $height, $x = 0, $y = 0)
     {

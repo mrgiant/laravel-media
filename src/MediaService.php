@@ -353,6 +353,19 @@ class MediaService
     
                     break;
 
+                case 'scale':
+                        $imageService->scale($conversion['width'], $conversion['height']);
+        
+                        break;
+
+                case 'scaleDown':
+                        $imageService->scaleDown($conversion['width'], $conversion['height']);
+            
+                        break;
+    
+
+                        
+
                 case 'crop':
                     $imageService->crop($conversion['width'], $conversion['height'], $conversion['x'] ?? 0, $conversion['y'] ?? 0);
                     break;
