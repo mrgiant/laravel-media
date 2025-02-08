@@ -339,6 +339,8 @@ class MediaService
             $conversion['width']  = !empty($conversion['width'])  ? $conversion['width']  : null;
             $conversion['height'] = !empty($conversion['height']) ? $conversion['height'] : null;
 
+            $image_type = !empty($conversion['image_type']) ? $conversion['image_type'] : '';
+
 
             switch ($type) {
                 case 'resize':
@@ -370,9 +372,27 @@ class MediaService
                     throw new \Exception('Unsupported action type: ' . $type);
             }
 
+
+            switch ($image_type) {
+                case 'png':
+                    $extension = 'png';
+                    break;
+                case 'jpg':
+                    $extension = 'jpg';
+                    break;
+                case 'gif':
+                    $extension = 'gif';
+                    break;
+                    case 'webp':
+                        $extension = 'webp';
+                        break;
+                default:
+                    $extension = $extension;
+            }
+
             $new_file_name = $fileNameWithoutExtension . '-' . $conversionName . '.' . $extension;
 
-            $imageService->saveImage($directoryPath . '/' . $new_file_name);
+            $imageService->saveImage($image_type,$directoryPath . '/' . $new_file_name);
 
             $generated_conversions[$conversionName] = $new_file_name;
         }

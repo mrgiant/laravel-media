@@ -116,10 +116,28 @@ class ImageService
         return ($mode === 'h') ? $this->image->flip('h') : $this->image->flip('v');
     }
 
-    public function saveImage($outputPath)
+    public function saveImage($image_type,$outputPath)
     {
 
-        Storage::disk($this->diskName)->put($outputPath, $this->image->encode());
+        if(empty($image_type))
+        {
+            
+            Storage::disk($this->diskName)->put($outputPath, $this->image->encode());
+        }
+        else
+        {
+
+            Storage::disk($this->diskName)->put($outputPath, $this->image->encode());
+            Storage::disk($this->diskName)->put($outputPath, $this->image->encodeByMediaType('image/'.$image_type));
+
+        }
+
+       
+
+
+
+       //  Storage::disk('public')->put('pwa_images/webp/logo.webp', $image_resize->encode(new WebpEncoder(quality: 100)));
+
 
         return true;
     }
