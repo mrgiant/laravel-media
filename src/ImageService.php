@@ -173,7 +173,7 @@ class ImageService
         if(empty($image_type))
         {
             
-            Storage::disk($this->diskName)->put($outputPath, $this->image->encode(quality: 100));
+            Storage::disk($this->diskName)->put($outputPath, $this->image->encode());
         }
         else
         {
