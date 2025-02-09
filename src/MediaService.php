@@ -115,8 +115,8 @@ class MediaService
 
         switch ($this->acceptsFileTypes) {
             case 'image':
-                $fileValidationRules[$this->modelColumnName] .= '|mimetypes:image/jpeg,image/png,image/bmp';
-                $mimeTypesMessage = 'Please upload a valid image file (JPEG, PNG, BMP).';
+                $fileValidationRules[$this->modelColumnName] .= '|mimetypes:image/jpeg,image/png,image/bmp,image/webp';
+                $mimeTypesMessage = 'Please upload a valid image file (JPEG, PNG, BMP, WebP).';
                 break;
             case 'video':
                 $fileValidationRules[$this->modelColumnName] .= '|mimetypes:video/x-flv,video/mp4,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/x-ms-asf,video/avi';
@@ -396,9 +396,9 @@ class MediaService
                 case 'gif':
                     $extension = 'gif';
                     break;
-                    case 'webp':
-                        $extension = 'webp';
-                        break;
+                case 'webp':
+                    $extension = 'webp';
+                    break;
                 default:
                     $extension = $extension;
             }
