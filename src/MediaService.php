@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
 
 //use Intervention\Image\Drivers\Gd\Driver;
@@ -34,6 +33,7 @@ class MediaService
     public function __construct() {}
 
     public function toMediaCollection($mediaCollection)
+
     {
         $this->mediaCollection = $mediaCollection;
 
