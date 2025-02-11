@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Log;
 
 //use Intervention\Image\Drivers\Gd\Driver;
 
@@ -338,6 +339,11 @@ class MediaService
 
             $conversion['width']  = !empty($conversion['width'])  ? $conversion['width']  : null;
             $conversion['height'] = !empty($conversion['height']) ? $conversion['height'] : null;
+
+
+            Log::info("width general ".$conversion['width']);
+
+           
 
             $image_type = !empty($conversion['image_type']) ? $conversion['image_type'] : '';
 
