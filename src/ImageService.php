@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver;
 use Intervention\Image\ImageManager;
-use Illuminate\Support\Facades\Log;
+
 class ImageService
 {
     protected $manager;
@@ -87,7 +87,6 @@ class ImageService
     public function scale($width, $height)
     {
 
-        Log::info("width scale ".$width);
         if(empty($width))
         {
 
