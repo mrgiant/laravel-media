@@ -161,7 +161,7 @@ class MediaService
 
         $FileOriginalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
 
-        $file_name = Str::random(8) . '_' . Str::random(8) . '_' . trim($file->getClientOriginalName());
+        $file_name = Str::random(8) . '_' . Str::random(8) . '_' . trim(preg_replace('/\s+/', '_',$file->getClientOriginalName()));
 
         $disk = Storage::disk($this->diskName);
 
