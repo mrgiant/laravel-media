@@ -294,14 +294,14 @@ class MediaService
             $media_id = Crypt::decrypt($media_id);
         } catch (DecryptException $e) {
 
-            return response()->json(['error' => 'File not found'], 404);
+            return response()->json(['error' => 'File not found, invalid ID'], 404);
         }
 
         $media = $this->mediaModelClass::find($media_id);
 
         if (! $media) {
 
-            return response()->json(['error' => 'File not found'], 404);
+            return response()->json(['error' => 'find File not found, invalid ID'], 404);
         }
 
         $file_path = $media->getPath();
@@ -313,7 +313,7 @@ class MediaService
             return $disk->download($file_path);
         }
 
-        return response()->json(['error' => 'File not found'], 404);
+        return response()->json(['error' => 'File not found end'], 404);
     }
 
     public function processImage($filePath, $fileNameWithoutExtension, $directoryPath, $extension, array $conversions = [])
